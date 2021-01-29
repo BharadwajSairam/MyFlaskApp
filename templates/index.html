@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Flask App</title>
-    </head>
-    <body>
-        <h1>{{name}}'s First Flask App</h1>
-    </body>
-
-</html>
+{% extends "layout.html" %}
+{% block body%}
+        <form action="/register" method="POST">
+            <input placeholder="Username" name="name" autofocus autocomplete="off" type="text" required> 
+            <input placeholder="Password" name="password" autofocus autocomplete="off" type="password" required>
+            <input placeholder="Age" name="age" autofocus autocomplete="off" type="number" required>
+            <input placeholder="Ful Name" name="fullname" autofocus autocomplete="off" type="text" required>
+            <select name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <input placeholder="Address" name="address" autofocus autocomplete="off" type="text" required>
+            <input placeholder="Health" name="health" autofocus autocomplete="off" type="text" required>
+            
+            <input type="submit">
+        </form>
+{% endblock %}
