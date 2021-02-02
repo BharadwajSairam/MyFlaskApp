@@ -6,13 +6,15 @@
             <input placeholder="Age" name="age" autofocus autocomplete="off" type="number" required>
             <input placeholder="Ful Name" name="fullname" autofocus autocomplete="off" type="text" required>
             <select name="gender" required>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
+                {% for gender in g %}
+                <option value={{gender}}>{{gender}}</option>
+                {%endfor%}
             </select>
             <input placeholder="Address" name="address" autofocus autocomplete="off" type="text" required>
             <input placeholder="Health" name="health" autofocus autocomplete="off" type="text" required>
             
             <input type="submit">
         </form>
+        <a href="/login">Login Page</a>
+        <a href="/logout">Logout</a>
 {% endblock %}
